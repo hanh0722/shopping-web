@@ -1,0 +1,7 @@
+@mixin font-size($tag) {
+    @if $tag == 'small' {
+        font-size: var(--size-14);
+    } @else if $tag == 'large' {
+        font-size: var(--size-18);
+    }
+}
