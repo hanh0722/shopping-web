@@ -1,10 +1,12 @@
 import React, { FC } from "react";
-
+import Footer from "../Footer";
+import Navigation from "../Navigation";
 const Layout: FC = (props) => {
     return(
         <div>
-            Layout Component
+            <Navigation />
             {props.children}
+            <Footer />
         </div>
     )
 }

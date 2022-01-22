@@ -5,7 +5,9 @@ import './styles/root.scss';
 
 function App() {
   const elements = useRoutes(RouteConfig);
-  return <>{elements}</>;
+  return <>
+      {elements}
+  </>;
 }
 
 export default App;

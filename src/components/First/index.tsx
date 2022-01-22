@@ -1,9 +1,11 @@
 import React from "react";
-
+import { Layout } from "..";
 const First = () => {
     return(
         <div>
-            first component
+            <Layout>
+                Hello
+            </Layout>
         </div>
     )
 }
