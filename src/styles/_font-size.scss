@@ -3,5 +3,9 @@
         font-size: var(--size-14);
     } @else if $tag == 'large' {
         font-size: var(--size-18);
+    } @else if $tag == 'medium' {
+        font-size: var(--size-16);
+    } @else if $tag == 'xs' {
+        font-size: var(--size-12);
     }
 }

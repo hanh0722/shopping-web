@@ -1,0 +1,12 @@
+.form{
+    max-width: var(--form-size-primary);
+    margin: 0 auto;
+    input{
+        width: 100%;
+    }
+    h3{
+        font-size: var(--size-24);
+    }
+    height: 50vh;
+    padding-top: var(--size-24);
+}

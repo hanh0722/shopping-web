@@ -1,21 +1,12 @@
-import { RouteObject } from "react-router-dom"
-import First from "../First"
-import NoMatch from "../NoMatch"
-import Params from "../Params"
+import { RouteObject } from "react-router-dom";
+import Login from '../view/Login';
+import { LOGIN } from "../../constants/routes";
 
 const routes: Array<RouteObject> = [
     {
-        path: '/',
-        element: <First/>,
+        path: LOGIN,
+        element: <Login/>,
     },
-    {
-        path: '/:id',
-        element: <Params/>
-    },
-    {
-        path: '*',
-        element: <NoMatch/>
-    }
 ]
 
 export default routes;

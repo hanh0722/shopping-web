@@ -1,18 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 :root {
   --header-height: 100px;
-
-
-
   --sp-header: rgb(26, 148, 255);
   --body-color: #efefef;
   --title-color: #000000;
   --text-color: rgb(36, 36, 36);
   --white-color: #fff;
-
+  --border-input-primary: 1px solid #ddd;
+  --red-primary: red;
+  --light-gray-primary: #ddd;
+  --form-size-primary: 650px;
+  --shadow-sm: 0px 2px 8px rgba(0, 0, 0, .15);
+  --size-4: 4px;
+  --size-8: 8px;
+  --size-12: 12px;
   --size-14: 14px;
   --size-16: 16px;
   --size-18: 18px;
   --size-20: 20px;
+  --size-24: 24px;
 }
+@import "./font-size";
+@import './transtition';
+@import './transition-group';
 
-@import './font-size';
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+.d-flex {
+  display: flex;
+}
+.d-block {
+  display: block;
+}
+.d-none {
+  display: none;
+}
+.justify-content-start {
+  justify-content: flex-start;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-end {
+  justify-content: flex-end;
+}
+.align-items-start {
+  align-items: flex-start;
+}
+.align-items-center {
+  align-items: center;
+}
+.align-items-end {
+  align-items: flex-end;
+}

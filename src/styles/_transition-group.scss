@@ -1,0 +1,26 @@
+@import './transtition';
+
+@mixin input-error-start {
+    @include opacity(0);
+    @include scale(0.65);
+}
+
+@mixin input-error-exit {
+    @include opacity(1);
+    @include scale(1);
+}
+
+.input-error-enter{
+    @include input-error-start();
+}
+.input-error-enter-active{
+    @include input-error-exit();
+    transition: all .5s ease-in-out;
+}
+.input-error-exit{
+    @include input-error-exit();
+}
+.input-error-exit-active{
+    @include input-error-start();
+    transition: all .5s ease-in-out;
+}

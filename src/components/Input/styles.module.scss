@@ -1,0 +1,42 @@
+@import '../../styles/font-size';
+.input{
+    label{
+        display: block;
+        @include font-size('small');
+    }
+    input{
+        @include font-size('small');
+        border: var(--border-input-primary);
+        padding: var(--size-8) var(--size-12);
+        border-radius: var(--size-4);
+        &::placeholder{
+            color: var(--light-gray-primary);
+            @include font-size('small');
+        }
+        outline: none;
+        transition: all .3s ease-in-out;
+        &:hover{
+            box-shadow: var(--shadow-sm);
+        }
+    }
+    .input-icon{
+        position: relative;
+        i{
+            position: absolute;
+            top: 50%;
+            right: var(--size-8);
+            transform: translateY(-50%);
+            @include font-size('small');
+        }
+    }
+    .error{
+        @include font-size('small');
+        color: var(--red-primary);
+    }
+    .input-error{
+        border-color: var(--red-primary);
+        &::placeholder{
+            color: var(--red-primary);
+        }
+    }
+}

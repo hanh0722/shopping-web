@@ -1,0 +1,6 @@
+@mixin scale ($value) {
+    transform: scale($value);
+}
+@mixin opacity($value) {
+    opacity: $value;
+}
