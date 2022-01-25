@@ -1,12 +1,44 @@
+@import '../../../styles/font-size';
 .form{
-    max-width: var(--form-size-primary);
-    margin: 0 auto;
+    @include font-size('small');
     input{
         width: 100%;
     }
     h3{
         font-size: var(--size-24);
+        padding-bottom: var(--size-24);
     }
-    height: 50vh;
+    height: calc(100vh - var(--header-height));
     padding-top: var(--size-24);
+    padding-bottom: var(--size-24);
+    .button{
+        p{
+            padding-top: var(--size-16);
+            a{
+                color: var(--sp-header);
+            }
+        }
+    }
+    .social{
+        padding-top: var(--size-16);
+    }
+    .buttons{
+        padding-top: var(--size-16);
+        div{
+            width: var(--size-32);
+            height: var(--size-32);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--white-color);
+            &:first-child{
+                background: var(--google-color-primary);
+                margin-right: var(--size-20);
+            }
+            &:last-child{
+                background: var(--facebook-color-primary);
+            }
+            cursor: pointer;
+        }
+    }
 }

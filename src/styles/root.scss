@@ -9,9 +9,14 @@
   --white-color: #fff;
   --border-input-primary: 1px solid #ddd;
   --red-primary: red;
+  --google-color-primary: #EA4335;
+  --facebook-color-primary: #1A73E3;
   --light-gray-primary: #ddd;
-  --form-size-primary: 650px;
+  --gray-primary: #F6F6F6;
+  --gray-secondary: #CCCCCD;
+  --form-size-primary: 450px;
   --shadow-sm: 0px 2px 8px rgba(0, 0, 0, .15);
+  --shadow-md: 0px 4px 8px rgba(0, 0, 0, .2);
   --size-4: 4px;
   --size-8: 8px;
   --size-12: 12px;
@@ -20,6 +25,17 @@
   --size-18: 18px;
   --size-20: 20px;
   --size-24: 24px;
+  --size-28: 28px;
+  --size-32: 32px;
+  --size-40: 40px;
+  --size-42: 42px;
+  --size-60: 60px;
+  --mw-image-form: 600px;
+  --weight-700: 700;
+  --f-width: 100%;
+  --text-small-primary: 300px;
+  --f-height: 100vh;
+  --form-background-primary: linear-gradient(219.77deg, #FF82F5 0%, #3D86F3 99.17%);
 }
 @import "./font-size";
 @import './transtition';

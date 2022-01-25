@@ -1,0 +1,19 @@
+.buttons{
+    padding-top: var(--size-16);
+    div{
+        width: var(--size-32);
+        height: var(--size-32);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--white-color);
+        &:first-child{
+            background: var(--google-color-primary);
+            margin-right: var(--size-20);
+        }
+        &:last-child{
+            background: var(--facebook-color-primary);
+        }
+        cursor: pointer;
+    }
+}

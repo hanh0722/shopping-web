@@ -1,9 +1,10 @@
-export interface InputProps {
+import { classNameProps } from "./className";
+
+export interface InputProps extends classNameProps {
     type?: string;
     placeholder?: string;
     onChange?: (value: string) => void;
     label?: string;
-    className?: string,
     id?: string;
     validate?: boolean,
     validateInput?: (value: string) => boolean,

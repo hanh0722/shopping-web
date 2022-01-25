@@ -1,0 +1,11 @@
+.button {
+  padding: var(--size-8) var(--size-12);
+  font-size: var(--size-14);
+  border-radius: var(--size-4);
+  color: var(--white-color);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.35s ease-in-out;
+  &:hover {
+    box-shadow: var(--shadow-md);
+  }
+}

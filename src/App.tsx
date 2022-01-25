@@ -1,12 +1,14 @@
-import { useRoutes } from "react-router-dom";
+import { useRoutes, useLocation } from "react-router-dom";
 import { Navigation, RouteConfig } from "./components";
 import "./styles/root.scss";
+import { isHiddenNavigation } from "./utils/hiddenNavigation";
 
 function App() {
   const elements = useRoutes(RouteConfig);
+  const location = useLocation();
   return (
     <>
-      <Navigation />
+      {isHiddenNavigation(location.pathname) && <Navigation />}
       {elements}
     </>
   );
