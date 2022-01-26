@@ -9,7 +9,7 @@ export const isValidLength = (value: string, length: number) => {
 
 export const isValidPassword = (value: string) => {
     const passwordIsValid = value.match(REGEX_PASSWORD);
-    return passwordIsValid;
+    return !!passwordIsValid;
 }
 
 export const isValidEmail = (value: string) => {

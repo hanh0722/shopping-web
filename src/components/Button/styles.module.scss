@@ -9,3 +9,8 @@
     box-shadow: var(--shadow-md);
   }
 }
+
+.disabled{
+  color: var(--white-color);
+  background: var(--gray-secondary) !important;
+}

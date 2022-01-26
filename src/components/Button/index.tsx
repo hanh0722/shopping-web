@@ -14,7 +14,7 @@ const Button: FC<ButtonProps> = ({
       onClick={onClick ? onClick : undefined}
       type={type || "button"}
       disabled={disabled || false}
-      className={`bg-blue ${styles.button} ${className ? className : ""}`}
+      className={`bg-blue ${disabled ? styles.disabled : ''} ${styles.button} ${className ? className : ""}`}
     >
       {children}
     </button>

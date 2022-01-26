@@ -12,3 +12,7 @@ export interface SocializeLoginProps extends classNameProps {
     titleGoogle?: string;
     titleFacebook?: string;
 }
+
+export interface LayoutProps extends classNameProps {
+    title?: string
+}

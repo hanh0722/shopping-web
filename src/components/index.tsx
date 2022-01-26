@@ -7,5 +7,6 @@ import SocialLogin from "./SocialLogin";
 import Grid from "./UI/Grid";
 import LoginForm from "./view/Login/LoginForm";
 import Image from "./Image";
+import Loading from "./Loading";
 
-export { RegisterForm, RouteConfig, Navigation, Input, Button, SocialLogin, Grid, Image, LoginForm };
+export { RegisterForm, RouteConfig, Navigation, Input, Button, SocialLogin, Grid, Image, LoginForm, Loading };

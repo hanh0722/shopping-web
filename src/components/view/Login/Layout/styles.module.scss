@@ -1,0 +1,25 @@
+@import '../../../../styles/font-size';
+
+.layout{
+    padding: var(--size-24);
+    background: var(--white-color);
+    border-radius: var(--size-24);
+    margin-top: var(--size-40);
+    h3{
+        padding-bottom: var(--size-12);
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: var(--size-64);
+            height: var(--size-4);
+            border-radius: var(--size-4);
+            background: var(--sp-header);
+        }
+        margin-bottom: var(--size-16);
+        @include font-size('heading');
+        line-height: var(--size-32);
+    }
+}

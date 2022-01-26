@@ -7,5 +7,7 @@
         font-size: var(--size-16);
     } @else if $tag == 'xs' {
         font-size: var(--size-12);
+    } @else if $tag == 'heading' {
+        font-size: var(--size-20);
     }
 }
