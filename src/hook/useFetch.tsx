@@ -105,12 +105,12 @@ const useFetch = () => {
           payload: response.data,
         });
       } catch (err: any) {
-        const error = err as ErrorProps;
+        const error = err;
         dispatch({
           type: ACTION_TYPE.ERROR,
           payload: {
-            message: error.message,
-            code: error?.code || 500,
+            message: error.response?.data?.message || error.message || "Cannot get data from server",
+            code: error.response?.data?.code || error?.code || 500
           },
         });
       }

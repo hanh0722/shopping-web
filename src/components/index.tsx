@@ -8,5 +8,6 @@ import Grid from "./UI/Grid";
 import LoginForm from "./view/Login/LoginForm";
 import Image from "./Image";
 import Loading from "./Loading";
+import ErrorMessage from "./ErrorMessage";
 
-export { RegisterForm, RouteConfig, Navigation, Input, Button, SocialLogin, Grid, Image, LoginForm, Loading };
+export { RegisterForm, RouteConfig, Navigation, Input, Button, SocialLogin, Grid, Image, LoginForm, Loading, ErrorMessage };

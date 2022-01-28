@@ -24,3 +24,27 @@
     @include input-error-start();
     transition: all .5s ease-in-out;
 }
+
+@mixin scrollLeftStart {
+    @include opacity(0);
+    @include translateX(100%);
+}
+@mixin scrollLeftActive {
+    @include opacity(1);
+    @include translateX(0);
+}
+
+.scroll-left-enter{
+    @include scrollLeftStart();
+}
+.scroll-left-enter-active{
+    @include scrollLeftActive();
+    transition: all .5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+}
+.scroll-left-exit{
+    @include scrollLeftActive();
+}
+.scroll-left-exit-active{
+    @include scrollLeftStart();
+    transition: all .5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}

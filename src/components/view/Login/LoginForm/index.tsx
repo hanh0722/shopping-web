@@ -1,9 +1,9 @@
-import React, { FormEvent, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
-import { LoginApis } from "../../../../services/auth/LoginApis";
-import { Button, Grid, Input, Loading, SocialLogin } from "../../..";
+import { FormEvent, useEffect, useMemo, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useLogin } from "../../../../services/auth/LoginApis";
+import { Button, ErrorMessage, Grid, Input, Loading, SocialLogin } from "../../..";
 import useToggle from "../../../../hook/useToggle";
-import { FORGET_PASSWORD, REGISTER } from "../../../../constants/routes";
+import { FORGET_PASSWORD, HOME_PAGE, REGISTER } from "../../../../constants/routes";
 import {
   isValidEmail,
   isValidPassword,
@@ -14,9 +14,11 @@ import Layout from "../Layout";
 import styles from "./styles.module.scss";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { isToggle, changeToggleHandler } = useToggle(false);
+  const { isLoading, data, loginApis, error } = useLogin();
   const formIsValid = useMemo(() => {
     return (
       isValidPassword(password) &&
@@ -28,14 +30,21 @@ const LoginForm = () => {
     if (!formIsValid) {
       return;
     }
-
-    const response = await LoginApis(username, password);
-    console.log(response);
-
+    loginApis(username, password);
   };
   const userNameIsValid = (value: string) => {
     return isValidEmail(value) || isValidPhone(value);
   };
+
+  useEffect(() => {
+    if (isLoading || error) {
+      return;
+    }
+    if (!isLoading && data) {
+      navigate(HOME_PAGE);
+    }
+  }, [isLoading, error, data, navigate]);
+  
 
   return (
     <FormLayout onSubmitHandler={submitFormHandler} isAllowRollBack isShowLogo>
@@ -74,16 +83,21 @@ const LoginForm = () => {
         </p>
         <Button
           type="submit"
-          disabled={!formIsValid}
+          disabled={!formIsValid || isLoading}
           className={`w-full ${styles.button}`}
         >
-          Đăng nhập
+          {isLoading ? "Đang xử lý" : "Đăng nhập"}
         </Button>
         <div className={`text-center ${styles["title-socialize"]}`}>
           <p className={`inline-block`}>Hoặc</p>
         </div>
         <SocialLogin />
-        <Loading className="pt-3" />
+        {isLoading && <Loading className="pt-3" />}
+        <ErrorMessage 
+        message="Tài khoản hoặc mật khẩu không chính xác"
+        error={false}
+        conditionActive={!isLoading && error}
+        />
       </Layout>
     </FormLayout>
   );

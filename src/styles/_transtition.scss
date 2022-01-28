@@ -4,3 +4,10 @@
 @mixin opacity($value) {
     opacity: $value;
 }
+
+@mixin translateY($value) {
+    transform: translateY($value);
+}
+@mixin translateX($value) {
+    transform: translateX($value);
+}
