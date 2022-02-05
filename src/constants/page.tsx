@@ -1,0 +1,2 @@
+export const REGISTER_FORM = 'REGISTER_FORM';
+export const REGISTER_OTP = 'REGISTER_OTP';

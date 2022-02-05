@@ -44,11 +44,9 @@ const LoginForm = () => {
       navigate(HOME_PAGE);
     }
   }, [isLoading, error, data, navigate]);
-  
-
   return (
     <FormLayout onSubmitHandler={submitFormHandler} isAllowRollBack isShowLogo>
-      <Layout title="Đăng nhập">
+      <Layout className={styles['form-input']} title="Đăng nhập">
         <p className={styles.title}>
           Bạn chưa có tài khoản? <Link to={REGISTER}>Đăng ký</Link>
         </p>

@@ -1,18 +1,21 @@
 import React from "react";
 import { Image } from "../../..";
+import { Link } from "react-router-dom";
 import { FormLayoutProps } from "../../../../types/Register";
 import styles from "./styles.module.scss";
+import { HOME_PAGE } from "../../../../constants/routes";
+import { classList } from "../../../../utils/classList";
 
 const FormLayout: React.FC<FormLayoutProps> = (props) => {
   return (
     <form
       onSubmit={props.onSubmitHandler ? props.onSubmitHandler : undefined}
-      className={`${styles.form} ${props.className ? props.className : ""}`}
+      className={classList(styles.form, props.className)}
     >
       <div className={`container ${styles.content}`}>
-        {props.isAllowRollBack && <div className={`flex justify-center items-center ${styles.rollback}`}>
+        {props.isAllowRollBack && <Link to={HOME_PAGE}><div className={`flex justify-center items-center ${styles.rollback}`}>
           <i className="far fa-angle-left"></i>
-        </div>}
+        </div></Link>}
         {props.isShowLogo && <div className={styles.logo}>
           <Image src="/2228f38cf84d1b8451bb49e2c4537081.png" />
           <Image src="/61ff572362f08ead7f34ce410a4a6f96.png"/>

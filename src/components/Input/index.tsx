@@ -30,7 +30,7 @@ const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
         <div className={styles['input-icon']}>
           <input
             ref={ref}
-            className={!isValid && inputIsTouch ? styles["input-error"] : ""}
+            className={!isValid && inputIsTouch && props.validateInput ? styles["input-error"] : ""}
             type={props.type || "text"}
             onChange={changeInputHandler}
             value={value}

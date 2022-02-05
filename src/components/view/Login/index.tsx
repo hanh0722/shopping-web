@@ -1,10 +1,18 @@
 import BannerSignIn from "./BannerSignIn";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../../store";
-import { PAGE_TYPE } from "../../../store/PageFormSlice";
+import { PageFormActions, PAGE_TYPE } from "../../../store/PageFormSlice";
 import LoginForm from "./LoginForm";
-const RegisterForm = () => {
+import { useEffect } from "react";
+import { AppDispatch } from "../../../model/store-model";
+const Login = () => {
   const state = useSelector<RootState>((state) => state.page.page);
+  const dispatch = useDispatch<AppDispatch>();
+  useEffect(() => {
+    return () => {
+      dispatch(PageFormActions.changePageHandler(PAGE_TYPE.INTRODUCTION_FORM));
+    };
+  }, [dispatch]);
   return (
     <>
       {state === PAGE_TYPE.INTRODUCTION_FORM && <BannerSignIn />}
@@ -13,4 +21,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default Login;

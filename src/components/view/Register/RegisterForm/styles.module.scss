@@ -1,0 +1,27 @@
+@import '/src/styles/font-size';
+.title{
+    padding-bottom: var(--size-24);
+    @include font-size('small');
+    a{
+        color: var(--sp-header);
+        font-weight: var(--weight-700);
+    }
+}
+.grid{
+    grid-template-columns: repeat(1, 1fr) !important;
+    input{
+        width: 100%;
+    }
+}
+.allow{
+    p{
+        @include font-size('small');
+        padding-left: var(--size-8);
+        width: calc(100% - var(--size-32));
+    }
+}
+.register{
+    max-width: var(--mw-image-form);
+    margin: 0 auto;
+    margin-top: var(--size-32);
+}

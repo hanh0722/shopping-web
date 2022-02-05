@@ -18,10 +18,10 @@
         z-index: 10;
         margin: 0 auto;
         padding: 0 var(--size-16);
+        min-height: calc(100vh - var(--size-40));
     }
     .logo{
         max-width: 150px;
-        max-height: 120px;
         img{
             width: 100%;
             height: auto;

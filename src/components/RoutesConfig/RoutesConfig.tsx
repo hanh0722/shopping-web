@@ -1,12 +1,17 @@
 import { RouteObject } from "react-router-dom";
-import RegisterForm from '../view/Login'
-import { LOGIN } from "../../constants/routes";
+import Login from '../view/Login'
+import { LOGIN, REGISTER } from "../../constants/routes";
+import Register from "../view/Register";
 
 const routes: Array<RouteObject> = [
     {
         path: LOGIN,
-        element: <RegisterForm/>,
+        element: <Login/>,
     },
+    {
+        path: REGISTER,
+        element: <Register/>
+    }
 ]
 
 export default routes;

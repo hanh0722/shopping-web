@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 :root {
   --header-height: 100px;
@@ -34,6 +34,7 @@
   --size-42: 42px;
   --size-60: 60px;
   --size-64: 64px;
+  --size-100: 100px;
   --mw-error-message: 300px;
   --mw-image-form: 600px;
   --weight-700: 700;
@@ -47,7 +48,7 @@
 @import './transition-group';
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
 }
 .d-flex {

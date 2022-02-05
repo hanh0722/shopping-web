@@ -16,3 +16,10 @@ export interface SocializeLoginProps extends classNameProps {
 export interface LayoutProps extends classNameProps {
     title?: string
 }
+
+export interface RegisterProps {
+    username: string;
+    password: string;
+    phone: string;
+    email: string;
+}

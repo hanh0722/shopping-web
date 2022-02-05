@@ -5,3 +5,7 @@ export interface ButtonProps extends classNameProps {
     disabled?: boolean;
     type?: 'button' | 'submit'
 }
+
+export interface CheckboxProps extends classNameProps {
+    onChangeChecked: (value: boolean) => void;
+}
