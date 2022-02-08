@@ -1,10 +1,9 @@
-import { ChangeEvent, FC, forwardRef } from "react";
+import { ChangeEvent, FC, forwardRef, KeyboardEvent, Ref } from "react";
 import { InputProps } from "../../types/input";
 import styles from "./styles.module.scss";
 import useInput from "../../hook/useInput";
 import { CSSTransition } from "react-transition-group";
-const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
-  (props, ref) => {
+const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>((props, ref: Ref<HTMLInputElement>) => {
     const { changeValueHandler, inputIsTouch, isValid, onBlurHandler, value } =
       useInput(props.initialValue, (value: string) =>
         props.validate && props.validateInput
@@ -18,6 +17,11 @@ const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
         props.onChange(event.target.value);
       }
     };
+    const keyUpHandler = (event: KeyboardEvent<HTMLInputElement>) => {
+      if (props.onKeyUp) {
+        props.onKeyUp(event)
+      }
+    }
     return (
       <div
         className={`${styles.input} ${props.className ? props.className : ""}`}
@@ -30,10 +34,12 @@ const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
         <div className={styles['input-icon']}>
           <input
             ref={ref}
+            autoComplete='off'
             className={!isValid && inputIsTouch && props.validateInput ? styles["input-error"] : ""}
             type={props.type || "text"}
             onChange={changeInputHandler}
-            value={value}
+            onKeyUp={keyUpHandler}
+            value={props.valueInput ? props.valueInput : value}
             onBlur={onBlurHandler}
             placeholder={props.placeholder || ""}
           />

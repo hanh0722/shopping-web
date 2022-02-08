@@ -1,3 +1,4 @@
+import React, { KeyboardEvent } from "react";
 import { classNameProps } from "./className";
 
 export interface InputProps extends classNameProps {
@@ -9,5 +10,13 @@ export interface InputProps extends classNameProps {
     validate?: boolean,
     validateInput?: (value: string) => boolean,
     initialValue?: string,
-    message?: string
+    message?: string,
+    onKeyUp?: (event: KeyboardEvent<HTMLInputElement>) => void;
+    ref?: React.Ref<HTMLInputElement>;
+    valueInput?: string | number;
+}
+
+export interface InputOTPProps extends classNameProps {
+    numberOTP?: number;
+    getOTP: (otpArray: Array<string | null>) => void;
 }

@@ -52,6 +52,10 @@ const reducerFunction = (state: State, action: Action) => {
         isLoading: false,
         data: action.payload,
       };
+    case ACTION_TYPE.RESET: 
+      return {
+        ...initialState
+      }
     default:
       return state;
   }
@@ -117,9 +121,15 @@ const useFetch = () => {
     },
     []
   );
+  const resetStateHandler = useCallback(() => {
+    dispatch({
+      type: ACTION_TYPE.RESET
+    })
+  }, []);
   return {
     ...state,
     fetchDataFromServer,
+    resetStateHandler
   };
 };
 

@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from "react";
+import ReactDOM from "react-dom";
 import { ErrorNotifyProps } from "../../types/Error";
 import styles from "./styles.module.scss";
 import { CSSTransition } from "react-transition-group";
@@ -27,22 +28,32 @@ const ErrorMessage: FC<ErrorNotifyProps> = (props) => {
 
   const removeActiveHandler = () => {
     setIsActive(false);
-  }
+  };
   return (
-    <CSSTransition
-      in={isActive}
-      timeout={500}
-      unmountOnExit
-      mountOnEnter
-      classNames="scroll-left"
-    >
-      <div className={`${styles.box} ${props.error ? styles.error : styles.success}`}>
-        <div onClick={removeActiveHandler} className={`flex justify-center items-center ${styles.close}`}>
-          <i className="far fa-times"></i>
+    ReactDOM.createPortal(
+    <>
+      <CSSTransition
+        in={isActive}
+        timeout={500}
+        unmountOnExit
+        mountOnEnter
+        classNames="scroll-left"
+      >
+        <div
+          className={`${styles.box} ${
+            props.error ? styles.error : styles.success
+          }`}
+        >
+          <div
+            onClick={removeActiveHandler}
+            className={`flex justify-center items-center ${styles.close}`}
+          >
+            <i className="far fa-times"></i>
+          </div>
+          <p className="text-right">{props.message}</p>
         </div>
-        <p className="text-right">{props.message}</p>
-      </div>
-    </CSSTransition>
+      </CSSTransition>
+    </>, document.getElementById('message-event')!)
   );
 };
 

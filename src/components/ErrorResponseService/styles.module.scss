@@ -1,0 +1,7 @@
+@import '/src/styles/font-size';
+.error{
+    @include font-size('small');
+    padding-top: var(--size-16);
+    color: var(--red-primary);
+    text-transform: capitalize;
+}

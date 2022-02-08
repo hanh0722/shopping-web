@@ -9,5 +9,8 @@
         font-size: var(--size-12);
     } @else if $tag == 'heading' {
         font-size: var(--size-20);
+    } @else if $tag == 'h1' {
+        font-size: var(--size-24);
+        font-weight: var(--weight-700);
     }
 }

@@ -11,6 +11,12 @@ import Loading from "./Loading";
 import ErrorMessage from "./ErrorMessage";
 import RegisterForm from "./view/Register/RegisterForm";
 import Checkbox from "./CheckBox";
+import RegisterOTP from "./view/Register/RegisterOTP";
+import LayoutTitleForm from "./LayoutTitleForm";
+import InputOTP from "./InputOTP";
+import Overlay from "./Overlay";
+import SuccessAuth from "./SuccessAuth";
+import ErrorResponseService from "./ErrorResponseService";
 
 export {
   Login,
@@ -26,4 +32,10 @@ export {
   ErrorMessage,
   RegisterForm,
   Checkbox,
+  RegisterOTP,
+  LayoutTitleForm,
+  InputOTP,
+  Overlay,
+  SuccessAuth,
+  ErrorResponseService
 };

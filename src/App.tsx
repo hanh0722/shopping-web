@@ -9,6 +9,9 @@ function App() {
   return (
     <>
       {isHiddenNavigation(location.pathname) && <Navigation />}
+      {/* <TransitionGroup>
+        <CSSTransition key={location.pathname} classNames="fade" timeout={300} unmountOnExit mountOnEnter>{elements}</CSSTransition>
+      </TransitionGroup> */}
       {elements}
     </>
   );

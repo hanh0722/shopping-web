@@ -1,0 +1,24 @@
+@import '/src/styles/font-size';
+
+@mixin font {
+    padding-bottom: var(--size-16);
+    @include font-size('small');
+    color: var(--dark-gray-primary);
+}
+.layout{
+    &::before{
+        background: transparent;
+    }
+    :global {
+        .fa-angle-left{
+            color: var(--text-color) !important;
+        }
+    }
+}
+.title{
+    @include font();
+    span {
+        font-weight: bold;
+        color: var(--text-color);
+    }
+}

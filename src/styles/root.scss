@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap');
 
 :root {
   --header-height: 100px;
@@ -16,10 +16,12 @@
   --light-gray-primary: #ddd;
   --gray-primary: #F6F6F6;
   --gray-secondary: #CCCCCD;
+  --dark-gray-primary: #8590A6;
   --gray-dark-primary: #828282;
   --form-size-primary: 450px;
   --shadow-sm: 0px 2px 8px rgba(0, 0, 0, .15);
   --shadow-md: 0px 4px 8px rgba(0, 0, 0, .2);
+  --overlay-primary: rgba(0, 0, 0, .5);
   --size-4: 4px;
   --size-8: 8px;
   --size-12: 12px;
@@ -32,11 +34,13 @@
   --size-32: 32px;
   --size-40: 40px;
   --size-42: 42px;
+  --size-50: 50px;
   --size-60: 60px;
   --size-64: 64px;
   --size-100: 100px;
   --mw-error-message: 300px;
   --mw-image-form: 600px;
+  --mw-box-primary: 400px;
   --weight-700: 700;
   --f-width: 100%;
   --text-small-primary: 300px;
@@ -48,7 +52,7 @@
 @import './transition-group';
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   overflow-x: hidden;
 }
 .d-flex {
@@ -77,4 +81,9 @@ body {
 }
 .align-items-end {
   align-items: flex-end;
+}
+input[type="number"] {
+  &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+    appearance: none;
+  }
 }

@@ -11,3 +11,6 @@
 @mixin translateX($value) {
     transform: translateX($value);
 }
+@mixin translate($valueX, $valueY) {
+    transform: translate($valueX, $valueY);
+}

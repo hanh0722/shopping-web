@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 
 const Grid: FC<classNameProps> = (props) => {
     return(
-        <div className={`${styles.grid} ${props.className ? props.className : ''}`}>
+        <div style={{...props.style}} className={`${styles.grid} ${props.className ? props.className : ''}`}>
             {props.children}
         </div>
     )

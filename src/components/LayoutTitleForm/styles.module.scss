@@ -1,0 +1,20 @@
+@import '/src/styles/font-size';
+.layout{
+    padding-top: var(--size-32);
+}
+.title{
+    padding-bottom: var(--size-12);
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: var(--size-60);
+        height: var(--size-4);
+        border-radius: var(--size-4);
+        background: var(--sp-header);
+    }
+    margin-bottom: var(--size-32);
+    @include font-size('h1');
+}

@@ -1,0 +1,22 @@
+@import '/src/styles/font-size';
+.grid{
+    gap: var(--size-16);
+    input{
+        width: 100%;
+        text-align: center;
+        @include font-size('h1');
+        transition: all .3s ease-in-out;
+        &:focus{
+            border-color: var(--sp-header);
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .grid{
+        input{
+            width: var(--size-50);
+            height: var(--size-50);
+        }
+    }
+}

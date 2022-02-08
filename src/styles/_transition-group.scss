@@ -48,3 +48,48 @@
     @include scrollLeftStart();
     transition: all .5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
+@mixin fadeEnter {
+    @include opacity(.75);
+}
+@mixin fadeActive {
+    @include opacity(1);
+}
+
+.fade-enter{
+    @include fadeEnter();
+}
+.fade-enter-active {
+    @include fadeActive();
+    transition: all .5s ease-in-out;
+}
+.fade-exit{
+    @include fadeActive();
+}
+.fade-exit-active{
+    @include fadeEnter();
+    transition: all .3s ease-in-out;
+}
+@mixin scrollYStart {
+    @include opacity(0);
+    @include translate(-50%, -100%);
+}
+@mixin scrollYFinish {
+    @include opacity(1);
+    @include translate(-50%, -50%);
+}
+
+.scroll-back-enter {
+    @include scrollYStart();
+}
+.scroll-back-enter-active{
+    @include scrollYFinish();
+    transition: all .5s ease-in-out;
+}
+.scroll-back-exit{
+    @include scrollYFinish();
+}
+.scroll-back-exit-active {
+    @include scrollYStart();
+    transition: all .5s ease-in-out;
+}

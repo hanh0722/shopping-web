@@ -3,7 +3,7 @@
     position: fixed;
     right: 0;
     top: var(--size-20);
-    z-index: 10;
+    z-index: 30;
     max-width: var(--mw-error-message);
     @include font-size('small');
     padding: var(--size-32) var(--size-20);

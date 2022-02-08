@@ -11,3 +11,4 @@ export const USERNAME = 'USERNAME';
 export const PASSWORD = 'PASSWORD';
 export const PHONE = 'PHONE';
 export const EMAIL = 'EMAIL';
+export const NUMBER_OTP_INPUT = 4;

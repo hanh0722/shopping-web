@@ -6,3 +6,8 @@ export interface ErrorNotifyProps extends classNameProps {
     conditionActive?: boolean;
     timeOut?: number;
 }
+
+export interface ErrorResponse {
+    message: string;
+    code: number
+}

@@ -23,3 +23,19 @@ export interface RegisterProps {
     phone: string;
     email: string;
 }
+
+export interface RegisterFormProps extends classNameProps {
+    registerHandler: (userData: RegisterProps) => void;
+    isLoading?: boolean;
+    error?: {
+        [props: string]: string | number | any
+    }
+}
+
+export interface LayoutTitleOTPProps extends classNameProps {
+    title?: string
+}
+export interface RegisterOTPProps {
+    email?: string | null,
+    username?: string | null
+}
